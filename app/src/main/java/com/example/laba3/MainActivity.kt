@@ -27,6 +27,13 @@ class MainActivity : AppCompatActivity() {
             insets
         }
 
+        inputString = findViewById(R.id.inputString)
+        inputChar = findViewById(R.id.inputChar)
+        findButton = findViewById(R.id.findButton)
+        resultTextView = findViewById(R.id.resultTextView)
+
 
     }
+
+
 }
