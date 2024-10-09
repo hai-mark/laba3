@@ -32,8 +32,22 @@ class MainActivity : AppCompatActivity() {
         findButton = findViewById(R.id.findButton)
         resultTextView = findViewById(R.id.resultTextView)
 
-
+        findButton.setOnClickListener { findLastChar() }
     }
 
+    private fun findLastChar() {
+        val str = inputString.text.toString()
+        val char = inputChar.text.toString()
 
+        if (str.isNotEmpty() && char.length == 1) {
+            val lastIndex = str.lastIndexOf(char[0])
+            if (lastIndex != -1) {
+                resultTextView.text = "Номер последнего символа '$char': ${lastIndex + 1}" // +1 для 1-индексации
+            } else {
+                resultTextView.text = "Символ '$char' не найден."
+            }
+        } else {
+            resultTextView.text = "Введите корректную строку и символ."
+        }
+    }
 }
