@@ -39,8 +39,8 @@ class MainActivity : AppCompatActivity() {
         val str = inputString.text.toString()
         val char = inputChar.text.toString()
 
-        if (str.isNotEmpty() && char.length == 1) {
-            val lastIndex = str.lastIndexOf(char[0])
+        if (str.isNotEmpty() && char.length == 1) { //проверяем что строка не пустая и введенный символ один
+            val lastIndex = str.lastIndexOf(char[0]) //метод lastIndexOf() возвращает последнее вхождение символа в строку или -1 если он не найден
             if (lastIndex != -1) {
                 resultTextView.text = "Номер последнего символа '$char': ${lastIndex + 1}" // +1 для 1-индексации
             } else {
